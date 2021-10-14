@@ -1,12 +1,13 @@
-const Engineer = require('../lib/Engineer')
+const Engineer = require("../lib/Engineer");
 
-describe('Engineer Class', () => {
-    describe('Initialization', () => {
-        it('Should create an object with an id and name', () => {
-            const engineer = new Engineer(123, 'Tim')
+test("Ability to set GitHub username using constructor function", () => {
+    const github = "malloryfaria";
+    const employee = new Engineer("Mallory", 1, "mallory.faria@gmail.com", github);
+    expect(employee.github).toBe(github);
+  });
 
-            expect(engineer.id).toEqual(123);
-            expect(engineer.name).toEqual('Tim');
-        });
-    });
-});
+  test("getRole() should return Engineer as a role", () => {
+    const role = "Engineer";
+    const employee = new Engineer("Mallory", 1, "mallory.faria@gmail.com", "malloryfaria");
+    expect(employee.getRole()).toBe(role);
+  });

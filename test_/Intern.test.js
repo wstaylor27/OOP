@@ -1,12 +1,13 @@
-const Intern = require('../lib/Intern')
+const Intern = require("../lib/Intern");
 
-describe('Intern Class', () => {
-    describe('Initialization', () => {
-        it('Should create an object with an id and name', () => {
-            const intern = new Intern(123, 'Tim')
+test("Ability to set school using constructor function", () => {
+    const school = "Hogwarts School of Witchcraft";
+    const employee = new Intern("Mallory", 1, "mallory.faria@gmail.com", school);
+    expect(employee.school).toBe(school);
+  });
 
-            expect(intern.id).toEqual(123);
-            expect(intern.name).toEqual('Tim');
-        });
-    });
-});
+  test("getRole() should return Intern as a role", () => {
+    const role = "Intern";
+    const employee = new Intern("Mallory", 1, "mallory.faria@gmail.com", "malloryfaria");
+    expect(employee.getRole()).toBe(role);
+  });
