@@ -1,6 +1,6 @@
-const Manager = require('../lib/Manager');
-const Engineer = require('../lib/Engineer')
-const Intern = require('../lib/Intern')
+const Manager = require("../lib/manager");
+const Engineer = require("../lib/engineer")
+const Intern = require("../lib/intern")
 
 
 function generateCards(team) {
@@ -8,15 +8,15 @@ function generateCards(team) {
   for(let i = 0; i < team.length; i++) {
     const teamArray = team[i];
     switch(teamArray.getRole()) {
-      case 'Manager':
-        const manager = new Manager(teamArray.id, teamArray.name, teamArray.email, teamArray.officeNumber);
+      case "Manager":
+        const manager = new Manager(teamArray.id, teamArray.name, teamArray.email, teamArray.office);
         cards.push(generateManagerCard(manager));
         break;
-      case 'Engineer':
+      case "Engineer":
         const engineer = new Engineer(teamArray.id, teamArray.name, teamArray.email, teamArray.github);
         cards.push(generateEngineerCard(engineer));
         break;
-      case 'Intern':
+      case "Intern":
         const intern = new Intern(teamArray.id, teamArray.name, teamArray.email, teamArray.school);
         cards.push(generateInternCard(intern));
         break;
@@ -36,7 +36,7 @@ let generateManagerCard = (Manager) => {
       <ul class="list-group list-group-flush">
         <li class="list-group-item">ID: ${Manager.getId()}</li>
         <li class="list-group-item">Email: ${Manager.getEmail()}</li>
-        <li class="list-group-item">Office Number: ${Manager.getOfficeNumber()}</li>
+        <li class="list-group-item">Office Number: ${Manager.getOffice()}</li>
       </ul>
     </div>
   </div>
