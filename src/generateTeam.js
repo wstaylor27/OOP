@@ -48,7 +48,7 @@ let generateEngineerCard = (Engineer) => {
   <div class="card m-1 shadow" style="width: 18rem">
     <div class='card-header'>
       <h3 class="card-title">${Engineer.getName()}</h3>
-      <h6 class="card-text"><i class="fa fa-laptop"></i> ${Engineer.getRole()}</h6>
+      <h6 class="card-text"><i class="fa fa-glasses"></i> ${Engineer.getRole()}</h6>
     </div>
     <div class="card-body">
       <ul class="list-group list-group-flush">
